@@ -2044,8 +2044,10 @@ function modalController(products) {
       gender = `<p>Chất liệu: ${obj.gender}</p>`;
     }
     let isLiked = "";
-    if (currentLiked.split(",").find((re) => re == obj.id)) {
-      isLiked = "active";
+    if (currentLiked) {
+      if (currentLiked.split(",").find((re) => re == obj.id)) {
+        isLiked = "active";
+      }
     }
 
     const product = document.createElement("div");
@@ -2444,7 +2446,7 @@ var startAnimationDone = false;
 var animatedAfterScroll = false;
 var animeToPause = [];
 let allProducts = [];
-var currentLiked;
+var currentLiked = Cookies.get("liked");
 
 var allAddOnsLoaded = false;
 checkAllAddOns();
@@ -2459,7 +2461,6 @@ let interval = setInterval(() => {
     flickityFunc();
     productsQuantityOnResize();
     productsNavigation();
-    currentLiked = Cookies.get("liked");
     if (currentLiked) setEmotion(currentLiked.split(","));
     modalController(allProducts);
     isotopeFunc();
