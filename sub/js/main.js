@@ -239,6 +239,7 @@ function myLayout_andLayoutControllerFunc() {
             const item = items[count];
 
             let ratio = item.getAttribute("data-ratio");
+            // console.log(item);
             let ratioProcess = ratioFromString(ratio);
             item.style.width = item.offsetHeight * (ratioProcess.a / ratioProcess.b) + "px";
 
@@ -639,10 +640,12 @@ function checkAllImgsLoaded(imgs) {
     let img = i.querySelector("img");
     // let img = i;
     if (img.complete) {
+      // console.log("img complete", img);
       reAssignNewWidthImg(i);
       loadedImgs++;
     } else {
       img.onload = (d) => {
+        // console.log("img complete on load", img);
         reAssignNewWidthImg(i);
         loadedImgs++;
       };
@@ -650,6 +653,7 @@ function checkAllImgsLoaded(imgs) {
   }
   let layoutInterVal = setInterval(() => {
     if (loadedImgs == totalImgs) {
+      // console.log(loadedImgs, totalImgs);
       clearInterval(layoutInterVal);
       imgsLoaded = true;
     }
@@ -698,7 +702,7 @@ function checkAllAddOns() {
 // let img=new Image();
 // img.complete
 const delayForAssignNewPosition = 20;
-const imgs = document.querySelectorAll(".gallery__item");
+// const imgs = document.querySelectorAll(".gallery__item");
 let imgsLoaded = false;
 let layoutArranged = false;
 // console.log(imgs);
@@ -714,14 +718,18 @@ let interval = setInterval(() => {
     clearInterval(interval);
 
     loadDataBase(500);
+    // console.log("Database ok");
+    checkAllImgsLoaded(document.querySelectorAll(".gallery__item"));
+    // console.log("CheckAll ok");
     productsQuantityOnResize();
+    // console.log("productsQuantityOnResize ok");
     modalController();
-
-    checkAllImgsLoaded(imgs);
+    // console.log("modalController ok");
     let layoutInterVal = setInterval(() => {
       if (imgsLoaded) {
         clearInterval(layoutInterVal);
         myLayout_andLayoutControllerFunc();
+        // console.log("myLayout_andLayoutControllerFunc ok");
       }
     }, 50);
   }
@@ -735,6 +743,7 @@ document.onreadystatechange = () => {
     let interval = setInterval(() => {
       if (layoutArranged) {
         clearInterval(interval);
+        // console.log("DOM ready");
         // let howLong_end = new Date();
         // alert(`Ready to use: ${(howLong_end.getTime() - howLong_start.getTime()) / 1000}s`);
         loaderControl.hide();
