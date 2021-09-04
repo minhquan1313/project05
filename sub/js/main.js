@@ -1,3 +1,4 @@
+// console.log(anime);
 // let howLong_start = new Date().toUTCString();
 // console.log(howLong_start);
 const loaderControl = {
@@ -682,10 +683,17 @@ function reAssignNewWidthImg(imgParent) {
 
   // console.log(bound.width);
 }
+function checkAllAddOns() {
+  let condition = typeof anime;
+  let interval = setInterval(() => {
+    if (condition) {
+      clearInterval(interval);
+      allAddOnsLoaded = true;
+    }
+  }, 50);
+}
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-loadDataBase(500);
-productsQuantityOnResize();
-modalController();
+
 // randomWidthGallery();
 // let img=new Image();
 // img.complete
@@ -695,11 +703,27 @@ let imgsLoaded = false;
 let layoutArranged = false;
 // console.log(imgs);
 // console.log(imgs);
-checkAllImgsLoaded(imgs);
-let layoutInterVal = setInterval(() => {
-  if (imgsLoaded) {
-    clearInterval(layoutInterVal);
-    myLayout_andLayoutControllerFunc();
+
+var allAddOnsLoaded = false;
+checkAllAddOns();
+
+let interval = setInterval(() => {
+  console.log("interval");
+
+  if (allAddOnsLoaded) {
+    clearInterval(interval);
+
+    loadDataBase(500);
+    productsQuantityOnResize();
+    modalController();
+
+    checkAllImgsLoaded(imgs);
+    let layoutInterVal = setInterval(() => {
+      if (imgsLoaded) {
+        clearInterval(layoutInterVal);
+        myLayout_andLayoutControllerFunc();
+      }
+    }, 50);
   }
 }, 50);
 

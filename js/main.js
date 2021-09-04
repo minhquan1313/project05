@@ -2423,6 +2423,17 @@ function refreshWaypointFunc() {
     }, delay_for_waypointJs);
   });
 }
+function checkAllAddOns() {
+  let condition = typeof anime && typeof Flickity && typeof Waypoint && typeof Cookies && typeof Isotope;
+  let interval = setInterval(() => {
+    console.log("addon");
+    if (condition) {
+      console.log("addon loaded");
+      clearInterval(interval);
+      allAddOnsLoaded = true;
+    }
+  }, 50);
+}
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 const fullpage = document.getElementById("fullpage");
 const logoScale = 1.8;
@@ -2433,22 +2444,33 @@ var startAnimationDone = false;
 var animatedAfterScroll = false;
 var animeToPause = [];
 let allProducts = [];
-loadDataBase();
-flickityFunc();
-productsQuantityOnResize();
-productsNavigation();
-var currentLiked = Cookies.get("liked");
-if (currentLiked) setEmotion(currentLiked.split(","));
-modalController(allProducts);
-isotopeFunc();
-refreshWaypointFunc();
-onStartAnimation();
-scrollFirstPage_and_header();
+var currentLiked;
+
+var allAddOnsLoaded = false;
+checkAllAddOns();
+
+let interval = setInterval(() => {
+  console.log("interval");
+
+  if (allAddOnsLoaded) {
+    console.log("interval ok");
+    clearInterval(interval);
+    loadDataBase();
+    flickityFunc();
+    productsQuantityOnResize();
+    productsNavigation();
+    currentLiked = Cookies.get("liked");
+    if (currentLiked) setEmotion(currentLiked.split(","));
+    modalController(allProducts);
+    isotopeFunc();
+    refreshWaypointFunc();
+    onStartAnimation();
+    scrollFirstPage_and_header();
+  }
+}, 50);
+
 document.onreadystatechange = () => {
   if (document.readyState === "complete") {
-    // setTimeout(() => {
-    // setTimeout(() => {
-    // }, 500);
     loaderControl.hide();
     setTimeout(() => {
       startAnimation = true;
@@ -2480,3 +2502,10 @@ document.onreadystatechange = () => {
 //   console.log(e.target);
 // };
 // document.body.contentEditable = true;
+
+// console.log(typeof Flickityy);
+// console.log(anime);
+// console.log(Flickity);
+// console.log(Waypoint);
+// console.log(Cookies);
+// console.log(Isotope);
