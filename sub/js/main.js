@@ -708,7 +708,7 @@ var allAddOnsLoaded = false;
 checkAllAddOns();
 
 let interval = setInterval(() => {
-  console.log("interval");
+  // console.log("interval");
 
   if (allAddOnsLoaded) {
     clearInterval(interval);

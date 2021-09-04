@@ -2426,9 +2426,9 @@ function refreshWaypointFunc() {
 function checkAllAddOns() {
   let condition = typeof anime && typeof Flickity && typeof Waypoint && typeof Cookies && typeof Isotope;
   let interval = setInterval(() => {
-    console.log("addon");
+    // console.log("addon");
     if (condition) {
-      console.log("addon loaded");
+      // console.log("addon loaded");
       clearInterval(interval);
       allAddOnsLoaded = true;
     }
@@ -2450,10 +2450,10 @@ var allAddOnsLoaded = false;
 checkAllAddOns();
 
 let interval = setInterval(() => {
-  console.log("interval");
+  // console.log("interval");
 
   if (allAddOnsLoaded) {
-    console.log("interval ok");
+    // console.log("interval ok");
     clearInterval(interval);
     loadDataBase();
     flickityFunc();
