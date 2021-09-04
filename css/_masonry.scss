@@ -1,0 +1,35 @@
+.masonry {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .masonry__item {
+    width: 100%;
+    height: 100%;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &.masonry__item--width25 {
+      width: 25%;
+    }
+    &.masonry__item--width50 {
+      width: 50%;
+    }
+    &.masonry__item--width75 {
+      width: 75%;
+    }
+
+    &.masonry__item--height25 {
+      height: 25%;
+    }
+    &.masonry__item--height50 {
+      height: 50%;
+    }
+    &.masonry__item--height75 {
+      height: 75%;
+    }
+  }
+}

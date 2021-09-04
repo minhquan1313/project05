@@ -1,0 +1,215 @@
+body.active #fullpage::before {
+  transform: scaleX(0);
+}
+#fullpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  // right: 0;
+  width: 100vw;
+  z-index: 8;
+  height: 100vh;
+  background: $bg_color;
+  will-change: transform;
+  // overflow: hidden;
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    transform: scaleX(1.5);
+    transition: 0.3s;
+  }
+  .main_avatar {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 50%;
+    height: 80%;
+    padding-bottom: 10px;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      will-change: transform, opacity;
+    }
+  }
+}
+
+.intro {
+  position: absolute;
+  z-index: 1;
+  top: calc(#{$header_height} + 20vh);
+  left: 0;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0 40px;
+}
+.intro__title-sup {
+  position: relative;
+  top: 26px;
+  grid-column: 2/5;
+  font-family: "Georama", sans-serif;
+  color: $border_color;
+  width: fit-content;
+  // will-change: scale;
+  > span {
+    display: inline-block;
+  }
+}
+.intro__title {
+  grid-column: 2/5;
+  font-size: calc(20px + 4vw);
+  color: $border_color;
+  width: fit-content;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+  font-family: "Georama", sans-serif;
+  line-height: 1.6;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.6s;
+  > span {
+    display: inline-block;
+    position: relative;
+    will-change: left, transform;
+    // will-change: transform;
+  }
+}
+.intro__arrow {
+  position: relative;
+  grid-column: 2/3;
+  height: 2px;
+  margin-left: 40px;
+  background: $border_color;
+  //   background-image: linear-gradient(to top right, #fff 50%, #fff 100%);
+  margin-top: 74px;
+  //   margin-bottom: auto;
+  //   inset: 2px;
+  .intro__arrowHead {
+    position: absolute;
+    // content: "";
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $bg_color;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px $border_color, 0 0 0 10px $bg_color;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $bg_color;
+      box-shadow: 0 0 0 2px $border_color, 0 0 0 10px $bg_color;
+    }
+    &::before {
+      //   arrow
+
+      z-index: 1;
+      transform: translateY(-50%) scale(0.4) rotate(45deg);
+      right: 3px;
+      background: $border_color;
+      $percent: 86%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, $percent 100%, $percent (100% - $percent), 0 (100% - $percent));
+      border-radius: unset;
+      box-shadow: unset;
+    }
+  }
+}
+.intro__des {
+  grid-column: 3/5;
+  text-align: justify;
+  padding-left: 6%;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 50px;
+}
+
+.main_threeTypeOfHamster {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  .hamsters {
+  }
+  .hamster {
+    & + .hamster {
+      margin-left: 50px;
+    }
+    .wrapperBG {
+      position: relative;
+      width: calc(100px + 5vw);
+      // height: 0;
+      > .pt {
+        position: relative;
+      }
+    }
+    .avatar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+    .avatar--food {
+      filter: hue-rotate(40deg);
+    }
+    .hamsterStuff {
+      position: relative;
+      margin-top: 4px;
+      padding: 8px 0;
+      text-align: center;
+      > * + * {
+        margin-left: 10px;
+      }
+    }
+    .hamsterStuff__name {
+      position: relative;
+    }
+  }
+}
+
+.add-icon {
+  position: relative;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // right: calc(100% + 4px);
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #000;
+  border: 1px solid currentColor;
+  background: transparent;
+  transition: 0.3s;
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 60%;
+    height: 1px;
+    background: currentColor;
+  }
+  &::after {
+    width: 1px;
+    height: 60%;
+  }
+}

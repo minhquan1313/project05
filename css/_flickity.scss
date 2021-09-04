@@ -1,0 +1,75 @@
+.flickity-slider {
+  will-change: transform;
+}
+// _+_+_+__+_+_+_+_+__++
+// dots below
+.flickity-page-dots {
+  bottom: -22px !important;
+}
+.flickity-page-dots .dot {
+  height: 4px !important;
+  width: 40px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: #f6d365 !important;
+  transition: 0.4s;
+  &:not(.is-selected):hover {
+    opacity: 0.5 !important;
+  }
+}
+// button next and previous
+.flickity-button {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  transition: 0.2s;
+  &::before,
+  &::after {
+    --padding: 0px;
+    position: absolute;
+    z-index: -1;
+    top: calc(0px - var(--padding));
+    left: calc(0px - var(--padding));
+    right: calc(0px - var(--padding));
+    bottom: calc(0px - var(--padding));
+    content: "";
+    border-radius: inherit;
+  }
+
+  &::after {
+    --padding: 6px;
+    z-index: -2;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+  }
+}
+.flickity-prev-next-button {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 5px !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+  &.previous {
+    left: -52px !important;
+    &::before {
+      background: linear-gradient(45deg, #f6d365, #fda085);
+    }
+  }
+  &.next {
+    right: -52px !important;
+    &::before {
+      background: linear-gradient(-45deg, #f6d365, #fda085);
+    }
+  }
+  &:active {
+    &.previous {
+      left: -60px !important;
+    }
+    &.next {
+      right: -60px !important;
+    }
+  }
+}
+.flickity-button-icon {
+  fill: white !important;
+  transform: rotate(-45deg) !important;
+}

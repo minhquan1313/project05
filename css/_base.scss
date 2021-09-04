@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &::selection {
+    background: #80b8fb;
+    // color: #626263;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0;
+  background: $bg_color;
+}
+
+body.active::-webkit-scrollbar {
+}
+body.active::-webkit-scrollbar-thumb {
+  background: $bg_color--darker;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg_color;
+}
+@font-face {
+  font-family: "panton";
+  src: url(../font/iCielPanton-Light.otf);
+}
+@import url("https://fonts.googleapis.com/css2?family=Georama&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$geoFont: "Georama", serif;
+$montFont: "Montserrat", sans-serif;
+html {
+  font-family: "panton", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  // scroll-behavior: smooth;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+}
+.dff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.df {
+  display: flex;
+}
+.aic {
+  display: flex;
+  align-items: center;
+}
+.jcc {
+  display: flex;
+  justify-content: center;
+}
+.t1 {
+  background: rgba(204, 204, 204, 0.6);
+}
+.t2 {
+  background: rgba(202, 67, 67, 0.6);
+}
+.pt {
+  width: 100%;
+  padding-top: var(--pt);
+}
+.wrapper-frame {
+  width: 100%;
+}
+.wrapper-frame--full {
+  width: 100%;
+  display: flex;
+}
+.frame1280 {
+  width: 1280px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.normalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.btn {
+  outline: none;
+  font-family: "Georama", sans-serif;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 8px 32px;
+}
+.btn--round {
+  border-radius: 100px;
+}
+.btn--noOutline {
+  border-color: transparent;
+}

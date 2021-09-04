@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../css/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" href="./css/modal.min.css" />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="./css/style.min.css" />
+  </head>
+
+  <body class="modal-active">
+    <!-- <script>
+      let howLong_start = new Date();
+    </script> -->
+    <div class="modal">
+      <div class="modal__overlay"></div>
+
+      <div class="modal-inner">
+        <div class="modal-loader">
+          <div class="modal-loader__dots">
+            <div class="modal-loader__dots-dot"></div>
+            <div class="modal-loader__dots-dot"></div>
+            <div class="modal-loader__dots-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <header class="">
+        <div class="header__wrapper">
+          <ul class="header__items">
+            <li class="header__item">
+              <a class="dff" href="#" data-cant_click>Sản phẩm</a>
+            </li>
+            <li class="header__item">
+              <a class="dff" href="">Thư viện</a>
+            </li>
+            <li class="header__item">
+              <a class="dff" href="#" data-cant_click>Hỗ Trợ</a>
+            </li>
+          </ul>
+          <div class="header__logo dff">
+            <a href="../index.html">
+              <!-- <a href="../index.html"> -->
+              <img src="../img/logo/hamsterLogo.svg" alt="" />
+            </a>
+          </div>
+          <div class="header__user aic">
+            <p class="header__user-sign" data-cant_click>Đăng nhập / Đăng ký</p>
+            <div class="header__user-avatar dff" data-cant_click>
+              <i class="ti-user"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="gallery">
+        <div class="gallery__sideBar">
+          <ul class="gallery__sideBar-items">
+            <li class="gallery__sideBar-item" data-cant_click>
+              <img src="../img/section1new/hamster1.svg" data-species="hamster" alt="" class="banner" />
+              <p class="name">Hamster</p>
+            </li>
+            <li class="gallery__sideBar-item" data-cant_click>
+              <img src="../img/section1new/rabbit.svg" data-species="rabbit" alt="" class="banner" />
+              <p class="name">Thỏ</p>
+            </li>
+            <li class="gallery__sideBar-item" data-cant_click>
+              <img src="../img/section1new/guinepig1.svg" data-species="guinea" alt="" class="banner" />
+              <p class="name">Bọ ú</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="gallery__wrapper">
+          <ul class="gallery__items"></ul>
+        </div>
+      </div>
+    </div>
+    <!-- Add-on -->
+    <!-- Anime  -->
+    <script src="../node_modules/animejs/lib/anime.min.js"></script>
+    <!-- My Js -->
+    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/main.min.js"></script>
+  </body>
+</html>

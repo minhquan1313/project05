@@ -1,0 +1,10 @@
+@import "myVar";
+@import "base";
+@import "header";
+.main {
+}
+body {
+  overflow: hidden;
+  width: 100vw;
+}
+@import "gallery";

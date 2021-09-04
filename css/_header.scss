@@ -1,0 +1,99 @@
+$header_height: 60px;
+$header_height: 50px;
+$header_border_color: #5c5843;
+$header_bg_color-active: #{$bg_color};
+$header_bg_color: transparent;
+:root {
+  --header_height: #{$header_height};
+  --header_bg_color: #{$header_bg_color};
+  --header_bg_color-active: #{$header_bg_color-active};
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  height: $header_height;
+  // background: $header_bg_color;
+  display: flex;
+  font-family: "Georama", sans-serif;
+  background: $bg_color;
+  // transition: 0.3s;
+}
+body.modal-active header {
+  right: 8px;
+  // background: $bg_color;
+}
+.header__wrapper {
+  width: 94%;
+  height: 100%;
+  //   background: $header_bg_color;
+  margin: auto;
+  display: flex;
+  // border-bottom: 1px solid $header_border_color;
+}
+.header__items {
+  flex: 1;
+  display: flex;
+}
+.header__item {
+  font-size: 18px;
+  height: 100%;
+  // will-change: transform, opacity;
+  > a {
+    height: 100%;
+    padding: 0 32px;
+    // white-space: nowrap;
+  }
+}
+.header__logo {
+  position: relative;
+  padding: 0 40px;
+  &::after,
+  &::before {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) skewX(-20deg);
+    content: "";
+    width: 1px;
+    height: 80%;
+    background: $header_border_color;
+    opacity: 0;
+  }
+  &::before {
+    right: unset;
+    left: 0;
+  }
+  > a {
+    display: flex;
+    height: $header_height - 10px;
+    width: $header_height - 10px;
+    transform-origin: top;
+    cursor: pointer;
+    > img {
+      object-fit: contain;
+      object-position: center;
+      filter: hue-rotate(-8deg);
+    }
+  }
+}
+.header__user {
+  justify-content: flex-end;
+  flex: 1;
+}
+.header__user-sign {
+  font-size: 15px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.header__user-avatar {
+  height: $header_height;
+  width: $header_height;
+  border-radius: 50%;
+  cursor: pointer;
+  > i {
+    font-size: 26px;
+  }
+}

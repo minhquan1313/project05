@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "flickity-fade": "^1.0.0",
+    "isotope-layout": "^3.0.6",
+    "js-cookie": "^3.0.0",
+    "waypoints": "^4.0.1"
+  }
+}

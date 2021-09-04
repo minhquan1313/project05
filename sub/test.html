@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="here"></div>
+
+    <script>
+      const here = document.querySelector("#here");
+
+      window.onwheel = (d) => {
+        let message = `Delta X: ${d.deltaX};Delta Y: ${d.deltaY};ScrollY: ${window.scrollY};`;
+        here.appendChild(create(message));
+      };
+      //   window.onscroll = (d) => {
+      // let message = `${d}`;
+      // console.log(d);
+      // here.appendChild(create(message));
+      //   };
+
+      function create(message) {
+        let t = document.createElement("p");
+        t.innerText = message;
+        return t;
+      }
+    </script>
+  </body>
+</html>
