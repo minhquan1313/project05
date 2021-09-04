@@ -600,6 +600,7 @@ function onStartAnimation() {
         targets: arrow,
         translateX: [-10, 0],
         opacity: [1, 1],
+        scaleX: [1, 1],
         loop: true,
         direction: "alternate",
         duration: 1000,
