@@ -2263,9 +2263,9 @@ function flickityFunc(class_name) {
     //   fade: true,
     // });
 
-    // carousel2.addEventListener("mouseleave", () => {
-    //   flickity2.playPlayer();
-    // });
+    carousel2.addEventListener("mouseleave", () => {
+      flickity2.playPlayer();
+    });
   }
 }
 function reactionFunc(e, id) {
