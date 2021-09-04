@@ -2243,7 +2243,7 @@ function flickityFunc(class_name) {
       wrapAround: true,
       // selectedAttraction: 0.02,
       // friction: 0.08,
-      // autoPlay: true,
+      autoPlay: 5000,
     });
     // carousel1.addEventListener("mouseleave", () => {
     //   flickity.playPlayer();
@@ -2254,7 +2254,7 @@ function flickityFunc(class_name) {
       friction: 0.1,
       prevNextButtons: false,
       // pauseAutoPlayOnHover: false,
-      // autoPlay: 5000,
+      autoPlay: 5000,
     });
     // var flickity3 = new Flickity(carousel3, {
     //   wrapAround: true,
